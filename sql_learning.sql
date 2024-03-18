@@ -19,9 +19,12 @@ Discription: this query displays all customers first, LastName, and Email Addres
 */
 
 
+
 SELECT 
-	FirstName, 
-	LastName,
-	Email
+	FirstName AS  [Customer First name], 
+	LastName AS 'Customer Last Name',
+	Email 	AS EMAIL
 FROM
 	Customer
+ORDER BY
+	LastName DESC
