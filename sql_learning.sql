@@ -45,3 +45,28 @@ WHERE
 	total = 1.98
 ORDER BY 
 	InvoiceDate    
+
+
+-- How many invoices exist betwen $1.98 and 5.00
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	total
+
+FROM 
+	Invoice
+WHERE 
+	total BETWEEN 1.98 AND 5.00
+
+-- How many invoices do we have that are exactly $1.98 or $3.96?
+SELECT
+	InvoiceDate
+	BillingAddress,
+	BillingCity,
+	total
+ 
+FROM 
+	Invoice
+WHERE 
+	total = 1.98 or  3.96
