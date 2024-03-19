@@ -69,4 +69,51 @@ SELECT
 FROM 
 	Invoice
 WHERE 
-	total = 1.98 or  3.96
+	total = 1.98 or  total =  3.96
+	--total IN (1.98, 3.96)  same with above
+
+
+-- How many invoices were billed to Brussels
+SELECT
+	InvoiceDate
+	BillingAddress,
+	BillingCity,
+	total
+ 
+FROM 
+	Invoice
+WHERE 
+	BillingCity = 'Brussels' 
+ORDER BY 
+	InvoiceDate
+
+--How many inoice were billed to Brussels, Orlando or Paris
+-- How many invoices were billed in cities 
+SELECT
+	InvoiceDate
+	BillingAddress,
+	BillingCity,
+	total
+ 
+FROM 
+	Invoice
+WHERE 
+	BillingCity  IN  ( 'Brussels' , 'Orlando', 'Paris')
+ORDER BY 
+	InvoiceDate
+
+--How many invoices where billed in cities that sttt with B
+
+-- How many invoices were billed in cities that start with B ?
+SELECT
+	InvoiceDate
+	BillingAddress,
+	BillingCity,
+	total
+ 
+FROM 
+	Invoice
+WHERE 
+	BillingCity  LIKE 'B%'
+ORDER BY 
+	InvoiceDate
