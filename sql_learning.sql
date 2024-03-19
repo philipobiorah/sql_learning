@@ -27,4 +27,21 @@ SELECT
 FROM
 	Customer
 ORDER BY
+
 	LastName DESC
+
+
+
+--How many customers purchases two sondg as $0.99 each
+--hint 2 * 0.99 = 1.98
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity,
+	total
+FROM
+	Invoice
+WHERE
+	total = 1.98
+ORDER BY 
+	InvoiceDate    
