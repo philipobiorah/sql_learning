@@ -234,3 +234,37 @@ INNER JOIN
  
  ORDER BY 
 	Customer.FirstName
+
+--FULL list of Customers and Invoices GENERATED ..using ALIAS
+SELECT *
+
+FROM 
+	Invoice AS i
+	
+INNER JOIN  
+	Customer AS c
+ ON i.CustomerId = c.CustomerId
+ 
+ ORDER BY 
+	c.FirstName
+
+
+
+--FULL list of Customers and Invoices GENERATED ..using ALIAS
+SELECT 
+	c.LastName,
+	c.FirstName,
+	i.InvoiceId,
+	c.CustomerId,
+	i.InvoiceDate,
+	i.Total
+
+FROM 
+	Invoice AS i
+	
+INNER JOIN  
+	Customer AS c
+ ON i.CustomerId = c.CustomerId
+ 
+ ORDER BY 
+	c.FirstName
