@@ -306,4 +306,20 @@ WHERE
 	Country = 'USA'
 	
 	
+--Create a Mainling List of US Customers, more fucntions, subtr, upper and lower
 
+SELECT 
+	FirstName,
+	LastName,
+	Address,
+	FirstName ||" "|| LastName ||" "|| Address||', ' || City ||" "||  PostalCode AS  'Mailing Address',
+	LENGTH(PostalCode),
+	substr(PostalCode, 1,5) AS [5 Digit Poatal Code],
+	upper(firstname) AS [First Name All caps],
+	lower(lastname) AS [ LAST NAME  ALL Lower]
+
+FROM 
+	Customer
+WHERE
+	Country = 'USA'
+	
