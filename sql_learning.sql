@@ -381,3 +381,26 @@ GROUP BY
 	
 LIMIT 10
  
+--DESCRIPTION: Grouping in SQL | What are the average invoice totals  greater than $5.00
+
+
+SELECT 
+	BillingCity,
+	ROUND(AVG(total),2) AS  [Average Sales],
+	SUM(total) AS [Total city Sales],
+	COUNT(total) AS [Sales Count]
+
+FROM 
+	Invoice
+
+GROUP BY
+ BillingCity
+ 
+ HAVING 
+	[Average Sales] > 5.00
+ 
+ ORDER BY 
+	[Average Sales] DESC
+	
+
+ 
