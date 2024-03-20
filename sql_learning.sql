@@ -335,3 +335,14 @@ SELECT
 	FROM 
 	Employee
 
+--AGGREGATE FUNCTIONS :  What are the all time global sales
+ 
+ 
+ SELECT
+	SUM(Total)  AS [Total Sales],
+	AVG(Total) AS [Average Sales],
+	MAX(Total) AS [Maximun Sales],
+	MIN(Total) AS [Minmum Sales],
+	COUNT(*) AS [Sales Count]
+FROM 
+	Invoice
