@@ -346,3 +346,38 @@ SELECT
 	COUNT(*) AS [Sales Count]
 FROM 
 	Invoice
+
+
+--AGGREGATE FUNCTIONS :  What are the all time global sales
+ 
+ 
+ SELECT
+	SUM(Total)  AS [Total Sales],
+	AVG(Total) AS [Average Sales],
+	MAX(Total) AS [Maximun Sales],
+	MIN(Total) AS [Minmum Sales],
+	COUNT(*) AS [Sales Count]
+FROM 
+	Invoice
+
+--DESCRIPTION: Grouping in SQL | What are the average iinvoice totals by city
+
+
+SELECT 
+	BillingCity,
+	ROUND(AVG(total),2) AS  [Average Sales],
+	SUM(total) AS [Total city Sales],
+	COUNT(total) AS [Sales Count]
+
+FROM 
+	Invoice
+-- WHERE 
+-- 	BillingCity LIKE 'L%'
+GROUP BY
+ BillingCity
+ 
+ ORDER BY 
+	[Average Sales] DESC
+	
+LIMIT 10
+ 
