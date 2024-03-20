@@ -323,3 +323,15 @@ FROM
 WHERE
 	Country = 'USA'
 	
+
+	--Calculate the ages of all Employees
+
+SELECT 
+	LastName,
+	FirstName,
+	BirthDate,
+	strftime('%Y-%m-%d', Birthdate) AS [Birthdate No timecode],
+	strftime('%Y-%m-%d','now') - strftime('%Y-%m-%d', Birthdate) AS Age
+	FROM 
+	Employee
+
