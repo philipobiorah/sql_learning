@@ -220,3 +220,17 @@ FROM
 	Invoice
 ORDER BY
 	BillingCity
+
+
+--FULL list of Customers and Invoices GENERATED
+SELECT *
+
+FROM 
+	Invoice
+	
+INNER JOIN  
+	Customer
+ ON Invoice.CustomerId = Customer.CustomerId
+ 
+ ORDER BY 
+	Customer.FirstName
