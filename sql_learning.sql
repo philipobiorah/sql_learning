@@ -292,4 +292,18 @@ ORDER BY
 	Total DESC
 LIMIT 10
 	
+--Create a Mainling List of US Customers
+
+SELECT 
+	FirstName,
+	LastName,
+	Address,
+	FirstName ||" "|| LastName ||" "|| Address||', ' || City ||" "||  PostalCode AS  'Mailing Address'
+
+FROM 
+	Customer
+WHERE
+	Country = 'USA'
 	
+	
+
