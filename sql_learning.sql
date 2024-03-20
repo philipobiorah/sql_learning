@@ -268,3 +268,28 @@ INNER JOIN
  
  ORDER BY 
 	c.FirstName
+
+
+--Description: JOINS on more than two tables | What employees are reposnsible for the 10 heightest indiviual sales
+
+
+SELECT 
+	i.InvoiceId,
+	i.CustomerId,
+	c.SupportRepId,
+	e.EmployeeId,
+	e.FirstName,
+	e.LastName,
+	e.Email,
+	i.total
+FROM 
+	Invoice i
+INNER JOIN Customer c
+	ON i.CustomerId = c.CustomerId
+INNER JOIN Employee e
+	ON c.SupportRepId = e.EmployeeId
+ORDER BY 
+	Total DESC
+LIMIT 10
+	
+	
