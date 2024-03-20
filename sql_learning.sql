@@ -403,4 +403,27 @@ GROUP BY
 	[Average Sales] DESC
 	
 
+ --DESCRIPTION: Grouping in SQL | What are the average iinvoice totals  greater than $5.00 for cities startng with B
+ -- WHERE IS used to filter non- aggregate fields while HAVING is used to filter Aggregate fields
+
+
+SELECT 
+	BillingCity,
+	ROUND(AVG(total),2) AS  [Average Sales],
+	SUM(total) AS [Total city Sales],
+	COUNT(total) AS [Sales Count]
+
+FROM 
+	Invoice
+WHERE 
+	BillingCity LIKE 'B%'
+
+GROUP BY
+ BillingCity
  
+ HAVING 
+	[Average Sales] > 5.00
+ 
+ ORDER BY 
+	[Average Sales] DESC
+	
