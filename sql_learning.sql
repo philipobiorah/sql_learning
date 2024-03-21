@@ -599,4 +599,7 @@ SELECT
 FROM
 	Invoice
 	
-	
+
+--DELETING A VIEW
+DROP VIEW 
+	V_Avg_Total
