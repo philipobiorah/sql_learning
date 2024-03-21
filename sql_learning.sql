@@ -520,3 +520,47 @@ FROM
 	Invoice
 WHERE 
 	InvoiceId  IN (251, 252, 254))
+
+
+--Description: Subqueries and DISTINCT | Which tracks are not selling? 
+
+
+SELECT  
+	Track.TrackId,
+	Track.Name,
+	Track.Composer
+	--Track.UnitPrice
+	
+
+FROM 
+	Track
+	
+LEFT  JOIN  InvoiceLine   
+	ON  InvoiceLine.TrackId = Track.TrackId
+LEFT JOIN Invoice
+		ON  Invoice.InvoiceId = InvoiceLine.InvoiceId
+	
+WHERE	
+	Invoice.InvoiceId IS NULL
+	
+ORDER BY 
+	Total DESC
+	
+	
+-----short format (faster) Subqueries and DISTINCT | Which tracks are not selling? 
+SELECT 
+	TrackId,
+	Name,
+	Composer
+
+FROM 
+	Track
+WHERE 
+	TrackId NOT IN
+
+(SELECT DISTINCT
+	TrackId
+FROM
+	InvoiceLine
+ORDER BY 
+	TrackId)
