@@ -441,3 +441,37 @@ FROM
 
  GROUP BY
 	BillingCountry, BillingCity
+
+
+--Description: How is each city performing against the global average sales?
+
+-- (SELECT 
+-- 			ROUND(AVG(Total),2)
+-- 
+-- FROM	
+-- 	Invoice)
+
+SELECT
+	BillingCity,
+	ROUND(AVG(total),2) AS city_avg_total,
+	(SELECT 
+			ROUND(AVG(Total),2)
+             FROM	
+	            Invoice)  AS  global_average
+	
+
+FROM 
+	Invoice
+	
+GROUP BY
+	BillingCity
+	
+-- HAVING 
+-- 	      city_avg_total  <
+-- 			(SELECT 
+-- 			ROUND(AVG(Total),2)
+--              FROM	
+-- 	            Invoice)
+	      
+ORDER BY 
+	BillingCity
