@@ -642,3 +642,24 @@ GROUP BY
 ORDER BY 
     TotalPurchaseAmount DESC
 LIMIT 5
+
+--- WHICH Employees have the highest number of customers they support, and how many customers does each employeee support
+SELECT 
+    c.SUPPORTREPID AS EmployeeId,
+    e.FIRSTNAME AS FirstName,
+    e.LASTNAME AS LastName,
+    COUNT(c.SUPPORTREPID) AS NumberOfCustomers
+
+
+FROM Employee e
+INNER JOIN Customer c
+ON e.EMPLOYEEID = c.SUPPORTREPID
+
+
+GROUP BY
+    EmployeeId,
+    FirstName,
+    LastName
+
+ORDER BY
+    NumberOfCustomers DESC
