@@ -603,3 +603,19 @@ FROM
 --DELETING A VIEW
 DROP VIEW 
 	V_Avg_Total
+
+--INSERTING INTO A TABLE
+
+
+INSERT INTO
+	Artist(Name)
+	VALUES("Davido")
+	
+	
+--UPDATE TABLE
+UPDATE
+	Artist
+SET Name = "Indaboski Bahose"
+
+WHERE 
+  ArtistId  = 276
