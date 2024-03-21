@@ -475,3 +475,48 @@ GROUP BY
 	      
 ORDER BY 
 	BillingCity
+
+
+-- Description: Subqueries without Aggregate functions
+
+SELECT
+	InvoiceDate,
+	BillingAddress,
+	BillingCity
+
+FROM 
+	Invoice
+WHERE 
+	--InvoiceDate >  DATE('2012-01-09 00:00:00')
+
+
+	InvoiceDate  >
+
+	(SELECT 
+	InvoiceDate
+	FROM 
+	Invoice
+	WHERE 
+	InvoiceId = 251)
+
+
+	-- Description: Returning multple values form a subquery
+
+SELECT
+	BillingCity,
+	BillingCountry,
+	BillingAddress,
+	InvoiceDate
+FROM	
+	Invoice
+
+WHERE 
+	InvoiceDate  IN
+
+
+(SELECT
+	InvoiceDate
+FROM
+	Invoice
+WHERE 
+	InvoiceId  IN (251, 252, 254))
