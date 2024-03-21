@@ -564,3 +564,39 @@ FROM
 	InvoiceLine
 ORDER BY 
 	TrackId)
+--CREATING A VIEW
+CREATE VIEW  V_nosales_tracks AS
+SELECT  
+	Track.TrackId,
+	Track.Name,
+	Track.Composer
+	--Track.UnitPrice
+	
+
+FROM 
+	Track
+	
+LEFT  JOIN  InvoiceLine   
+	ON  InvoiceLine.TrackId = Track.TrackId
+LEFT JOIN Invoice
+		ON  Invoice.InvoiceId = InvoiceLine.InvoiceId
+	
+WHERE	
+	Invoice.InvoiceId IS NULL
+	
+ORDER BY 
+	Total DESC
+	
+
+
+
+--MODIFYING A VIEW
+DROP VIEW "main"."V_Avg_Total";
+CREATE VIEW V_Avg_Total AS
+
+SELECT 
+	ROUND(AVG(Total),2) AS avg_total
+FROM
+	Invoice
+	
+	
