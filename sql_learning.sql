@@ -619,3 +619,26 @@ SET Name = "Indaboski Bahose"
 
 WHERE 
   ArtistId  = 276
+
+
+-- SQL request(s)​​​​​​‌​‌​‌‌‌​​‌​​‌​​‌‌‌​‌​‌​‌​ below WHICH CUSTOMERS HAVE MADE THE HIGHEST TOTOAL PURCHASE AMOUNT
+-- AND WHAT IS THE TOTAL AMOUNT FOR EACH CUSTOMER
+SELECT 
+    c.CUSTOMERID AS CustomerID,
+    c.FIRSTNAME AS FirstName,
+    c.LASTNAME AS LastName,
+    SUM(i.TOTAL)  AS TotalPurchaseAmount
+ 
+
+FROM Customer c
+
+INNER JOIN Invoice i
+ON c.CUSTOMERID = i.CUSTOMERID
+
+GROUP BY
+    CustomerID,
+    FirstName,
+    LastName
+ORDER BY 
+    TotalPurchaseAmount DESC
+LIMIT 5
