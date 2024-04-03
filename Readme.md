@@ -17,4 +17,15 @@ sqlite> .quite
 
 --- to view the schema
 sqlite3 favorites.db
-.schema
+.schema  
+
+
+
+CREATE TABLE IF NOT EXISTS "favorites"(
+    "Timestamp" TEXT, "language" TEXT, "problem" TEXT);
+
+
+SELECT columns FROM table;
+...
+
+SELECT * FROM favorites;
