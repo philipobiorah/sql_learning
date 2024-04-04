@@ -29,3 +29,7 @@ SELECT columns FROM table;
 ...
 
 SELECT * FROM favorites;
+
+SELECT DISTINCT(language) FROM favourities;
+
+SELECT COUNT(DISTINCT(language)) FROM favourites
