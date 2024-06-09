@@ -672,4 +672,12 @@ SELECT id, val
 FROM left_table
 INTERSECT
 SELECT id, val
-FROM right_table
+FROM right_table  
+
+
+--EXCEPT   returns records on the left table that are not in ther right  table 
+SELECT monarch, country 
+FROM monarchs 
+EXCEPT 
+SELECT prime_minster, country 
+FROM prime_minsters;
