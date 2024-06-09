@@ -663,3 +663,13 @@ GROUP BY
 
 ORDER BY
     NumberOfCustomers DESC
+
+
+---INTERSECT
+--- it takes two table and return only records common to both tables
+
+SELECT id, val
+FROM left_table
+INTERSECT
+SELECT id, val
+FROM right_table
