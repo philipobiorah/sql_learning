@@ -681,3 +681,5 @@ FROM monarchs
 EXCEPT 
 SELECT prime_minster, country 
 FROM prime_minsters;
+
+-- SUBQUERING with semin joins and inner joins
