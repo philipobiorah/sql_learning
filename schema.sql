@@ -44,3 +44,17 @@ CREATE Table universities (
 -- Print the contents of this table
 SELECT * 
 FROM universities
+
+
+-- Add the university_shortname column
+ALTER TABLE professors
+ADD COLUMN university_shortname text;
+
+--Print the contents of this table
+SELECT * 
+FROM professors
+
+--copy datafrom existing table to a new one
+INSERT INTO organizations
+SELECT DISTINCT organization,
+organization_sector FROM university_professors
