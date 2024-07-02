@@ -58,3 +58,13 @@ FROM professors
 INSERT INTO organizations
 SELECT DISTINCT organization,
 organization_sector FROM university_professors
+
+
+--INSERT INTO statement
+INSERT INTO table_name (column_a, column_b)
+VALUES ("value_a", "value_b")
+
+
+--RENAME a COLUMN 
+ALTER TABLE table_name
+RENAME COLUMN old_name TO new_name;
