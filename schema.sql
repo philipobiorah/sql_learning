@@ -68,3 +68,13 @@ VALUES ("value_a", "value_b")
 --RENAME a COLUMN 
 ALTER TABLE table_name
 RENAME COLUMN old_name TO new_name;
+
+
+-- Delete the university_shortname column
+ALTER TABLE affiliations
+DROP  COLUMN university_shortname;
+
+
+
+-- Delete the university_professors table
+DROP TABLE university_professors;
