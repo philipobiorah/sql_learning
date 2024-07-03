@@ -95,3 +95,8 @@ ALTER TABLE professors
 ALTER COLUMN firstname 
 TYPE varchar(16)
 USING SUBSTRING(firstname FROM 1 FOR 16)
+
+
+-- Disallow NULL values in firstname
+ALTER TABLE professors 
+ALTER COLUMN firstname SET NOT NULL;
