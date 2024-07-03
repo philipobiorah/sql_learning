@@ -105,3 +105,8 @@ ALTER COLUMN firstname SET NOT NULL;
 -- Make universities.university_shortname unique
 ALTER TABLE universities
 ADD CONSTRAINT university_shortname_unq UNIQUE(university_shortname);
+
+
+-- Count the number of rows in universities
+SELECT COUNT(*)
+FROM universities;
