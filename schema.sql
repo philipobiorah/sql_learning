@@ -110,3 +110,17 @@ ADD CONSTRAINT university_shortname_unq UNIQUE(university_shortname);
 -- Count the number of rows in universities
 SELECT COUNT(*)
 FROM universities;
+
+-- Count the number of distinct values in the university_city column
+SELECT COUNT(DISTINCT(university_city)) 
+FROM universities;
+
+
+
+-- Rename the organization column to id
+ALTER TABLE organizations
+RENAME COLUMN organization TO id;
+
+-- Make id a primary key
+ALTER TABLE organizations
+ADD CONSTRAINT organization_pk PRIMARY KEY (id);
