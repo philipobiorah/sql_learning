@@ -196,3 +196,16 @@ CREATE TABLE students (
   ssn integer PRIMARY KEY,
   phone_no char(12)
 );
+
+
+-- Rename the university_shortname column
+ALTER TABLE professors
+RENAME university_shortname TO univeristy_id;
+
+-- Rename the university_shortname column
+ALTER TABLE professors
+RENAME COLUMN university_shortname TO university_id;
+
+-- Add a foreign key on professors referencing universities
+ALTER  TABLE professors
+ADD CONSTRAINT professors_fkey FOREIGN KEY (university_id) REFERENCES universities (id);
