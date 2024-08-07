@@ -706,3 +706,6 @@ ADD column_name datatype;
 ALTER  TABLE affiliations
 ADD COLUMN professor_id integer REFERENCES professors (id);
 
+-- rename
+ALTER TABLE table_name
+RENAME COLUMN old_name to new_name;
