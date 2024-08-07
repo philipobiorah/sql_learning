@@ -723,3 +723,9 @@ FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
 -- Add a foreign key on organization_id
 ALTER TABLE affiliations
 ADD CONSTRAINT affiliations_organization_fkey FOREIGN KEY (organization_id) REFERENCES organizations (id);
+
+--a way to update columns of a table based on values in another table:
+UPDATE table_a
+SET column_to_update = table_b.column_to_update_from
+FROM table_b
+WHERE condition1 AND condition2 AND ...;
