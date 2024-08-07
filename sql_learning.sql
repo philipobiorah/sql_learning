@@ -692,3 +692,17 @@ FROM professors
 JOIN universities
 ON professors.university_id = universities.id
 WHERE universities.university_city = 'Zurich';
+
+
+---Alter table
+
+ALTER TABLE table_name
+ADD column_name datatype;
+
+
+
+-- Add a professor_id column
+-- Add a professor_id column with integer data type to affiliations, and declare it to be a foreign key that references the id column in professors.
+ALTER  TABLE affiliations
+ADD COLUMN professor_id integer REFERENCES professors (id);
+
