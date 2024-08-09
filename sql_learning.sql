@@ -770,3 +770,22 @@ DROP CONSTRAINT affiliations_organization_id_fkey;
 -- Add a new foreign key constraint from affiliations to organizations which cascades deletion
 ALTER TABLE affiliations
 ADD CONSTRAINT affiliations_organization_id_fkey FOREIGN KEY (organization_id) REFERENCES organizations (id) ON DELETE CASCADE;
+
+-- Delete an organization 
+DELETE FROM organizations 
+WHERE id = 'CUREM';
+
+-- Check that no more affiliations with this organization exist
+SELECT * FROM affiliations
+WHERE organization_id = 'CUREM';
+
+
+
+-- Count the total number of affiliations per university
+SELECT COUNT(*), professors.university_id 
+FROM affiliations
+JOIN professors
+ON affiliations.professor_id = professors.id
+-- Group by the university ids of professors
+GROUP BY professors.university_id
+ORDER BY count DES
