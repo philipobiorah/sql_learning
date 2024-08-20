@@ -818,7 +818,7 @@ GROUP BY organizations.organization_sector,
 professors.id, universities.university_city;
 
 
--- Filter the table and sort it
+-- Filter the table and sort 
 SELECT COUNT(*), organizations.organization_sector, 
 professors.id, universities.university_city
 FROM affiliations
@@ -832,3 +832,18 @@ WHERE organizations.organization_sector = 'Media & communication'
 GROUP BY organizations.organization_sector, 
 professors.id, universities.university_city
 ORDER BY count DESC;
+
+
+
+-- How to implement N:M - relationships
+-- create a tanble
+-- Add foreign keys for every connected table
+-- Add aditional attributes
+-- No primary key
+-- 
+
+CREATE TABLE affiliations (
+	professor_id integer REFERENCES professors (id),
+	organization_id varchar(256) REFERENCES organizations (id),
+	function varchar(256)
+);
